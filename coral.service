@@ -1,10 +1,12 @@
 [Unit]
 Description=Flask app exposing tensorflow lite model on the Coral USB stick
-After=network.target
+After=network.target network-online.target
 
 [Service]
-ExecStart=/usr/bin/python3 -u coral-app.py
-WorkingDirectory=/home/pi/coral-pi-rest-server
+StartLimitInterval=5
+StartLimitBurst=10
+ExecStart=/usr/bin/python3 -u coral-detect-objects.py
+WorkingDirectory=/home/pi/Documents/coral-pi-rest-server
 StandardOutput=inherit
 StandardError=inherit
 Restart=always
