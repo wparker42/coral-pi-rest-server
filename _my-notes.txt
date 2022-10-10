@@ -2,39 +2,6 @@
 ========= Working install of pycoral via =========
 $ python3 -m pip install https://github.com/google-coral/pycoral/releases/download/v2.0.0/pycoral-2.0.0-cp39-cp39-linux_armv7l.whl
 
+========= Working install of tflite_runtime via =========
+$ python3 -m pip install https://github.com/google-coral/pycoral/releases/download/v2.0.0/tflite_runtime-2.5.0.post1-cp39-cp39-linux_armv7l.whl
 
-========= Versions ========
-$ apt list --installed
-libedgetpu1-std/coral-edgetpu-stable,now 16.0 armhf [installed]
-
-
-
-========= Errors ========
-$ python3 coral-app.py --models_directory models --port 6000
-
- Initialised interpreter with model : models/ssd_mobilenet_v2_coco_quant_postprocess_edgetpu.tflite
- * Serving Flask app "coral-app" (lazy loading)
- * Environment: production
-   WARNING: This is a development server. Do not use it in a production deployment.
-   Use a production WSGI server instead.
- * Debug mode: on
-INFO:werkzeug: * Running on http://0.0.0.0:6000/ (Press CTRL+C to quit)
-INFO:werkzeug: * Restarting with stat
-F driver/usb/usb_driver.cc:1148] HandleQueuedBulkIn transfer in failed. Not found: USB transfer error 5 [LibUsbDataInCallback]
-Aborted
-pi@raspi:~/Documents/coral-pi-rest-server $ 
- Initialised interpreter with model : models/ssd_mobilenet_v2_coco_quant_postprocess_edgetpu.tflite
-WARNING:werkzeug: * Debugger is active!
-INFO:werkzeug: * Debugger PIN: 118-046-821
-Traceback (most recent call last):
-  File "/home/pi/Documents/coral-pi-rest-server/coral-app.py", line 112, in <module>
-    app.run(host="0.0.0.0", debug=True, port=args.port)
-  File "/usr/lib/python3/dist-packages/flask/app.py", line 990, in run
-    run_simple(host, port, self, **options)
-  File "/usr/lib/python3/dist-packages/werkzeug/serving.py", line 1050, in run_simple
-    run_with_reloader(inner, extra_files, reloader_interval, reloader_type)
-  File "/usr/lib/python3/dist-packages/werkzeug/_reloader.py", line 333, in run_with_reloader
-    ensure_echo_on()
-  File "/usr/lib/python3/dist-packages/werkzeug/_reloader.py", line 322, in ensure_echo_on
-    termios.tcsetattr(sys.stdin, termios.TCSANOW, attributes)
-termios.error: (5, 'Input/output error')

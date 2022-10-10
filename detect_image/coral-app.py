@@ -40,7 +40,7 @@ logging.getLogger('PIL').setLevel(logging.WARNING)
 
 DEFAULT_MODELS_DIRECTORY = "../models"
 DEFAULT_MODEL = "tf2_ssd_mobilenet_v2_coco17_ptq_edgetpu.tflite"
-DEFAULT_LABELS = "coco_labels.txt"
+DEFAULT_LABELS = "coco_labels_v2.txt"
 ROOT_URL = "/v1/vision/detection"
 DRAW_URL = "/v1/vision/processing"
 IMAGE_SAVE_PATH = "../saved_images/output.jpg"
